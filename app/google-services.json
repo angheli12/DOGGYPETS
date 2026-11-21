@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1075261526342",
+    "project_id": "doggypets-61b87",
+    "storage_bucket": "doggypets-61b87.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075261526342:android:9667d803b03a3745821547",
+        "android_client_info": {
+          "package_name": "com.ANG.doggypets"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDptfZMu-ELtCKDIT5UjKdIMUN9kzZsSNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
