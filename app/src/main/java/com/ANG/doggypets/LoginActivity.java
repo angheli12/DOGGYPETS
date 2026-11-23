@@ -1,5 +1,5 @@
 package com.ANG.doggypets;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -63,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         mostrarConfirmacionSesion("¡Bienvenido a DOGGYPETS!");
+                        Intent intent = new Intent(LoginActivity.this, CrudMascotasActivity.class);
+                        startActivity(intent);
                     } else {
                         String error = task.getException() != null ? task.getException().getMessage() : "Error";
                         Toast.makeText(this, "Error al iniciar sesión: " + error, Toast.LENGTH_LONG).show();
