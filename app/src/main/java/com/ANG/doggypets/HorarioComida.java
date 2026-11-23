@@ -8,7 +8,7 @@ public class HorarioComida {
     private int cantidad_gramos;
     private List<String> dias;
 
-    // Constructor vacío obligatorio para Cloud Firestore
+
     public HorarioComida() {
     }
 
@@ -20,7 +20,7 @@ public class HorarioComida {
         this.dias = dias;
     }
 
-    // Getters y Setters
+
     public String getId_horario() {
         return id_horario;
     }
