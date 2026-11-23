@@ -71,5 +71,14 @@
             android:layout_height="wrap_content"
             android:text="Eliminar mascota"/>
 
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cerrar Sesión"
+            android:backgroundTint="#F44336"
+            android:textColor="@android:color/white"/>
+
     </LinearLayout>
 </ScrollView>

@@ -1,5 +1,6 @@
 package com.ANG.doggypets;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -7,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -17,6 +19,7 @@ public class CrudMascotasActivity extends AppCompatActivity {
 
     private EditText edtId, edtNombre, edtPeso, edtRacion;
     private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class CrudMascotasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crud_mascotas);
 
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         edtId = findViewById(R.id.edtIdMascota);
         edtNombre = findViewById(R.id.edtNombre);
@@ -34,11 +38,21 @@ public class CrudMascotasActivity extends AppCompatActivity {
         Button btnBuscar = findViewById(R.id.btnBuscar);
         Button btnActualizar = findViewById(R.id.btnActualizar);
         Button btnEliminar = findViewById(R.id.btnEliminar);
+        Button btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
         btnGuardar.setOnClickListener(v -> guardar());
         btnBuscar.setOnClickListener(v -> buscar());
         btnActualizar.setOnClickListener(v -> actualizar());
         btnEliminar.setOnClickListener(v -> eliminar());
+        btnCerrarSesion.setOnClickListener(v -> cerrarSesion());
+    }
+
+    private void cerrarSesion() {
+        mAuth.signOut();
+        Intent intent = new Intent(CrudMascotasActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     private void mensaje(String texto) {
